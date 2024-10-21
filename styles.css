@@ -1,0 +1,114 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --background-color: #85c7f2;
+  --button-background-color: #726da8;
+  --list-item-background-color: #29619d;
+  --list-background-color: #827eec;
+  --footer-background-color: #726da8;
+  --text-color: #e5ccff;
+  --title-text-color: #4943f1;
+  --title-text-color: #726da8;
+  --button-text-color: #e5ccff;
+  --footer-text-color: #e5ccff;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.title-container {
+  display: flex;
+  justify-content: center;
+  color: var(--title-text-color);
+  padding-top: 20px;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.input-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.input {
+  height: 2rem;
+  margin: 30px 5% 10px 5%;
+  border-radius: 10px;
+}
+
+.button {
+  background-color: var(--button-background-color);
+  color: var(--button-text-color);
+  height: 2rem;
+  margin: 0 5%;
+  border-radius: 10px;
+}
+
+.list-container {
+  background-color: var(--list-background-color);
+  border-radius: 10px;
+  margin: 5%;
+}
+
+.list {
+  list-style: none;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--list-item-background-color);
+  border-radius: 10px;
+  margin: 5%;
+  overflow-wrap: break-word;
+  padding: 10px;
+}
+
+.delete-button {
+  background-color: var(--button-background-color);
+  color: var(--button-text-color);
+  height: 1.5rem;
+  width: auto;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.delete-button-img {
+  height: 1rem;
+  width: auto;
+}
+
+.crossed {
+  text-decoration: line-through;
+}
+
+.footer {
+  background-color: var(--footer-background-color);
+  color: var(--footer-text-color);
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  border-radius: 5px 5px 0px 0px;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .main {
+    margin: 0 25%;
+  }
+}
