@@ -1,6 +1,8 @@
 const addBtn = document.getElementById("add-button");
 const list = document.getElementById("list");
+const toggleCompletedBtn = document.getElementById("toggle-completed");
 
+let showCompleted = true;
 // Function to save tasks to localStorage
 const saveTasks = (tasks) => {
   localStorage.setItem("todos", JSON.stringify(tasks));
@@ -18,6 +20,7 @@ const renderTasks = () => {
   list.innerHTML = ""; // Clear current list
 
   tasks.forEach((task, index) => {
+    if (!showCompleted && task.completed) return;
     const li = document.createElement("li");
     const text = document.createElement("span");
     const delBtn = document.createElement("button");
@@ -81,6 +84,11 @@ addBtn.addEventListener("click", addNewTodo);
 
 // Load tasks from localStorage when the page loads
 window.addEventListener("load", renderTasks);
+
+toggleCompletedBtn.addEventListener("click", () => {
+  showCompleted = !showCompleted; // Toggle the flag
+  renderTasks(); // Re-render the list to show/hide completed tasks
+});
 
 const burgerMenu = document.getElementById("burger-menu");
 const settingsMenu = document.getElementById("settings-menu");
