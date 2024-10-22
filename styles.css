@@ -11,10 +11,10 @@
   --list-background-color: #827eec;
   --footer-background-color: #726da8;
   --text-color: #e5ccff;
-  --title-text-color: #4943f1;
   --title-text-color: #726da8;
   --button-text-color: #e5ccff;
   --footer-text-color: #e5ccff;
+  --settings-menu-background: #ffffff;
 }
 
 body {
@@ -22,11 +22,77 @@ body {
   color: var(--text-color);
 }
 
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  position: relative; 
+}
+
 .title-container {
+  flex: 1;
   display: flex;
   justify-content: center;
   color: var(--title-text-color);
-  padding-top: 20px;
+}
+
+.burger {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 20px;
+  position: absolute; /* Зробимо бургер-меню абсолютним */
+  right: 20px; /* Відстань справа */
+}
+
+.burger span {
+  background: var(--button-background-color);
+  height: 4px;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.settings-menu {
+  display: none;
+  position: absolute;
+  top: 60px;
+  background-color: var(--settings-menu-background);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  flex-direction: column;
+  z-index: 10;
+}
+
+.settings-menu button {
+  background-color: var(--button-background-color);
+  color: var(--button-text-color);
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  margin: 5px 0;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+}
+
+.settings-menu button:hover {
+  background-color: #5c54a6; /* Darker shade on hover */
+}
+
+.burger.open span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.burger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.burger.open span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
 }
 
 .main {
@@ -43,7 +109,7 @@ body {
 
 .input {
   height: 2rem;
-  margin: 30px 5% 10px 5%;
+  margin: 10px 5%;
   border-radius: 10px;
 }
 
@@ -53,6 +119,7 @@ body {
   height: 2rem;
   margin: 0 5%;
   border-radius: 10px;
+  cursor: pointer;
 }
 
 .list-container {
@@ -74,8 +141,16 @@ body {
   background-color: var(--list-item-background-color);
   border-radius: 10px;
   margin: 5%;
-  overflow-wrap: break-word;
+  overflow: hidden;
   padding: 10px;
+}
+
+.text {
+  flex-grow: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
 }
 
 .delete-button {
