@@ -30,7 +30,7 @@ const renderTasks = () => {
     text.textContent = task.text;
     text.addEventListener("contextmenu", (event) => {
       event.preventDefault(); // Запобігаємо появі стандартного контекстного меню
-    
+
       // Виводимо повний текст у алерті
       alert(task.text);
     });
@@ -66,7 +66,7 @@ const renderTasks = () => {
 const addNewTodo = () => {
   const input = document.getElementById("input");
   const tasks = getTasks();
-  
+
   if (input.value.trim()) {
     tasks.push({
       text: input.value,
@@ -75,7 +75,7 @@ const addNewTodo = () => {
     saveTasks(tasks); // Save the new task to localStorage
     renderTasks(); // Re-render the list
   }
-  
+
   input.value = ""; // Clear the input field
 };
 

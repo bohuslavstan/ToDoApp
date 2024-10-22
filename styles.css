@@ -27,7 +27,7 @@ body {
   justify-content: center;
   align-items: center;
   padding: 10px 20px;
-  position: relative; 
+  position: relative;
 }
 
 .title-container {
@@ -186,4 +186,43 @@ body {
   .main {
     margin: 0 25%;
   }
+
+  .input-container {
+    flex-direction: row;
+  }
+
+  .input {
+    width: 70%;
+    margin: auto;
+  }
+
+  .button {
+    width: 25%;
+    margin: auto;
+  }
+
+  .list {
+    font-size: 1rem;
+  }
+
+  .list-item {
+    padding: 5px;
+    margin: 10px;
+  }
+
+  .list-container {
+    width: 100%;
+    margin: 5% 0;
+  }
+  
+  .settings-menu {
+    right: 0;
+    width: 23%;
+  }
+  
+  .settings-menu button {
+    text-align: right;
+  }
+  
 }
+
